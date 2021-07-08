@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- pure css as style formatter -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+      integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5"
+      crossorigin="anonymous"
+    />
+
+    <!-- font awasome for import icons -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- google fonts -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- jQuery as the main third party library -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- leafletjs as the interactive map library -->
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css"
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+    <!-- flatpickr as plugin for date & time picker -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!-- the main stylesheet and js file -->
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="main.js"></script>
+
+    <title>Bluekey Rental Cars</title>
+  </head>
+  <body>
+    <!-- landing view -->
+
+    <section class="landing-view">
+      <h1 id="TNZ-logo">100% PURE NEW ZEALAND</h1>
+      <div class="landing-btns">
+        <div class="landing right-btn">
+          <h2>RENT A CAR</h2>
+          <i class="fas fa-arrow-right"></i>
+        </div>
+        <div class="landing left-btn">
+          <i class="fas fa-arrow-left"></i>
+          <h2>BOOK ACCOMMDATION</h2>
+        </div>
+      </div>
+      <h1 class="landing slogan">
+        STOP DREAMING ABOUT <br />
+        NEW ZEALAND AND GO ON <br />
+        AN EPIC ROAD TRIP
+      </h1>
+    </section>
+
+    <!-- header -->
+
+    <main>
+      <!-- first view: home & choose itinerary -->
+      <section class="views home-view" id="anchor1">
+        <header>
+          <img class="logo" src="../SVG/bluekey-logo.svg" alt="logo" />
+          <img src="../SVG/phone-number.svg" alt="hotline" />
+          <img src="../SVG/TNZ-logo.svg" alt="tnzlogo" />
+        </header>
+
+        <h2 id="slogan">
+          Blue Key, the best choice for a fun and hassle-free Kiwi experience.
+        </h2>
+        <div class="itinerary-container">
+          <div class="itinerary-line location">
+            <label for="pick-up-location">Choose pick up location:</label>
+            <select name="pick-up-location" id="pick-up-location">
+              <option value="" disabled selected>
+                Please Select Pick Up Location
+              </option>
+              <option value="Christchurch">Christchurch Airport</option>
+              <option value="Queenstown">Queenstown Airport</option>
+            </select>
+          </div>
+          <div class="itinerary-line date">
+            <label for="date-selector-1">Choose pick up date & time:</label>
+            <input
+              type="text"
+              id="date-selector-1"
+              placeholder="Select date & time"
+            />
+          </div>
+          <div class="itinerary-line location">
+            <label for="return-location">Choose return location:</label>
+            <select name="return-location" id="return-location">
+              <option value="" disabled selected>
+                Please Select Return Location
+              </option>
+              <option value="Christchurch">Christchurch Airport</option>
+              <option value="Queenstown">Queenstown Airport</option>
+            </select>
+          </div>
+          <div class="itinerary-line date">
+            <label id="return-date" for="date-selector-2"
+              >Choose return date & time: <span></span
+            ></label>
+            <input
+              type="text"
+              id="date-selector-2"
+              placeholder="Select Date & time"
+            />
+          </div>
+          <div class="itinerary-line age">
+            <label for="age-selector"
+              >your age:
+              <i class="fas fa-info-circle" id="age-pop-up-info"></i>
+            </label>
+            <select name="age-selector" id="age-selector">
+              <option value="1">25 +</option>
+              <option value="2">Under 25</option>
+            </select>
+          </div>
+          <div class="itinerary-line driver-license">
+            <label for="license-selector"
+              >Driver license type:
+              <i class="fas fa-info-circle" id="license-pop-up-info"></i>
+            </label>
+            <select name="license-selector" id="license-selector">
+              <option value="1">Overseas</option>
+              <option value="2">NZ Full</option>
+              <option value="3">NZ Restrict</option>
+              <option value="4">NZ Learner</option>
+            </select>
+          </div>
+          <div class="itinerary-line number-of-travllers">
+            <label for="number-input">For how many people: </label>
+            <div class="number-input-box">
+              <i class="fas fa-user-minus"></i>
+              <input
+                type="text"
+                value="2"
+                name="number-input-box"
+                id="number-input"
+              />
+              <i class="fas fa-user-plus"></i>
+            </div>
+          </div>
+        </div>
+        <div class="button-1">
+          <h3>find my car</h3>
+          <i class="fas fa-arrow-right"></i>
+        </div>
+        <div class="map-container">
+          <div id="map1"></div>
+          <h3 class="milesage">Total Mileage: <span>km</span></h3>
+        </div>
+      </section>
+
+      <!-- second view: select car -->
+
+      <section class="views select-car-view" id="anchor2">
+        <header>
+          <img class="logo" src="../SVG/bluekey-logo.svg" alt="logo" />
+          <img src="../SVG/phone-number.svg" alt="hotline" />
+          <img src="../SVG/TNZ-logo.svg" alt="tnzlogo" />
+        </header>
+        <nav>
+          <ul>
+            <li><a href="#anchor1">1.Edit Itinerary</a></li>
+            <li><a href="#anchor2">2. Select Vehicle</a></li>
+            <li><a href="#anchor3">3. Make Booking</a></li>
+            <li><a href="#anchor4">4. Confirm Booking</a></li>
+          </ul>
+        </nav>
+
+        <div class="itinerary-thumbnail-container">
+          <div class="thumbnail-title">
+            <h5>Your Itinerary</h5>
+            <div class="edit-btn">
+              <i class="fas fa-user-edit"></i>
+              <h5>Edit</h5>
+            </div>
+          </div>
+          <div class="itinerary-thumbnail"></div>
+        </div>
+        <div class="vehicle-total-container"></div>
+      </section>
+      <!-- third view: add extra -->
+      <section class="views add-extra-view" id="anchor3">
+        <header>
+          <img class="logo" src="../SVG/bluekey-logo.svg" alt="logo" />
+          <img src="../SVG/phone-number.svg" alt="hotline" />
+          <img src="../SVG/TNZ-logo.svg" alt="tnzlogo" />
+        </header>
+        <nav>
+          <ul>
+            <li><a href="#anchor1">1.Edit Itinerary</a></li>
+            <li><a href="#anchor2">2. Select Vehicle</a></li>
+            <li><a href="#anchor3">3. Make Booking</a></li>
+            <li><a href="#anchor4">4. Confirm Booking</a></li>
+          </ul>
+        </nav>
+        <div class="itinerary-thumbnail-container">
+          <div class="thumbnail-title">
+            <h5>Your Itinerary</h5>
+            <div class="edit-btn">
+              <i class="fas fa-user-edit"></i>
+              <h5>Edit</h5>
+            </div>
+          </div>
+          <div class="itinerary-thumbnail">
+            <div class="content-wrapper pick-up">
+              <h6>Pick Up:</h6>
+              <p></p>
+              <p></p>
+            </div>
+            <div class="content-wrapper return">
+              <h6>Return: (in <span> </span> days)</h6>
+              <p></p>
+              <p></p>
+            </div>
+            <div class="content-wrapper age">
+              <h6>Renter Age:</h6>
+              <p></p>
+            </div>
+            <div class="content-wrapper license">
+              <h6>Driver License:</h6>
+              <p></p>
+            </div>
+            <div class="content-wrapper number">
+              <h6>Total Travllers:</h6>
+              <p></p>
+            </div>
+            <div class="content-wrapper milsage">
+              <h6>Total Milsage:</h6>
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <div class="vehicle-thumbnail-container">
+          <h5 class="thumbnail-title">Vehicle Details</h5>
+          <div class="vehicle-thumbnail">
+            <div class="car-detail">
+              <div class="car-name">
+                <h2 class="car-type"></h2>
+                <h3 class="car-discription"></h3>
+              </div>
+              <div class="car-basic-info">
+                <div class="car-basic-info-content fuel">
+                  <img class="icon-img" src="../SVG/fuel.svg" alt="fuel" />
+                  <p></p>
+                </div>
+                <div class="car-basic-info-content passenger">
+                  <img
+                    class="icon-img"
+                    src="../SVG/passenger.svg"
+                    alt="passenger"
+                  />
+                  <p></p>
+                </div>
+                <div class="car-basic-info-content bags">
+                  <img class="icon-img" src="../SVG/bag.svg" alt="bags" />
+                  <p>
+                    <span></span> big bag <br />
+                    <span></span> small bag
+                  </p>
+                </div>
+                <div class="car-basic-info-content gear">
+                  <img
+                    class="icon-img"
+                    src="../SVG/milsage.svg"
+                    alt="milsage"
+                  />
+                  <p><span></span>L/100KM</p>
+                </div>
+                <div class="price-container">
+                  <p><span>$</span><span> </span>/day</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="insurance-container">
+          <h2>Choose Insurance</h2>
+          <div class="insurance-thumbnail-container">
+            <label for="hassle-free">
+              <span>Hassle Free</span> <br />
+              <input
+                type="radio"
+                name="insurance"
+                id="hassle-free"
+                value="30"
+                checked
+              />
+              <span class="checkmark"></span>
+              <span class="tag">Most Popular</span>
+              <span class="insurance-content">
+                <span>$ 0 Excess</span> <br />
+                <span>$ 0 Bond</span> <br />
+                <span><span>$30</span>/day</span>
+              </span>
+            </label>
+            <label for="assured">
+              <span>Assured</span> <br />
+              <input type="radio" name="insurance" id="assured" value="20" />
+              <span class="insurance-content">
+                <span>$ 350 Excess</span> <br />
+                <span>$ 0 Bond</span> <br />
+                <span><span>$20</span>/day</span>
+              </span>
+              <span class="checkmark"></span>
+            </label>
+            <label for="basic">
+              <span>Basic</span> <br />
+              <input type="radio" name="insurance" id="basic" value="0" />
+              <span class="insurance-content">
+                <span>$ 2500 Excess</span> <br />
+                <span>$ 2500 Bond</span> <br />
+                <span>FREE</span>
+              </span>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="bond-info">
+            <i class="fas fa-info-circle" id="bond-pop-up-info"></i>
+            <p>What are Excess and Bond?</p>
+          </div>
+        </div>
+        <div class="custmoer-detail-container">
+          <h2>Your Details</h2>
+          <p id="requirement">
+            The Hirer's name must match the name of the person collecting the
+            vehicle as shown on their driver licence and credit/debit card.
+          </p>
+          <div class="detail">
+            <div class="detail-line first-name">
+              <label for="first-name">First Name: </label>
+              <input
+                type="text"
+                name="first-name"
+                id="first-name"
+                placeholder="First name on driver license"
+              />
+            </div>
+            <div class="detail-line last-name">
+              <label for="last-name">Last Name: </label>
+              <input
+                type="text"
+                name="last-name"
+                id="last-name"
+                placeholder="Last name on driver license"
+              />
+            </div>
+            <div class="detail-line e-mail">
+              <label for="e-mail">Contact E-mail: </label>
+              <input
+                type="text"
+                name="e-mail"
+                id="e-mail"
+                placeholder="Your contact e-mail address"
+              />
+            </div>
+            <div class="detail-line phone">
+              <label for="phone">Phone Number: </label>
+              <input
+                type="text"
+                name="phone"
+                id="phone"
+                placeholder="Your contact phone number"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="quote-container">
+          <h5 class="thumbnail-title">Quote Details</h5>
+          <div class="quote-line">
+            <p>Type of Car</p>
+            <p><span>$</span></p>
+          </div>
+          <div class="quote-line">
+            <p>Rental Days</p>
+            <p></p>
+          </div>
+          <div class="quote-line subtotal">
+            <p>Vehicle Rental Cost</p>
+            <p><span>$</span> <span>NZD</span></p>
+          </div>
+          <div class="quote-line">
+            <p>Fuel Consumption</p>
+            <p></p>
+          </div>
+          <div class="quote-line">
+            <p>Total Milsage</p>
+            <p><span></span>km</p>
+          </div>
+          <div class="quote-line subtotal">
+            <p>Fuel Charge</p>
+            <p><span>$</span> <span>NZD</span></p>
+          </div>
+          <div class="quote-line insurance-line">
+            <p>Insurance</p>
+            <p><span>$</span> <span>NZD</span></p>
+          </div>
+          <div class="quote-line subtotal">
+            <p>Total Extra Items</p>
+            <p><span>$</span> <span>NZD</span></p>
+          </div>
+          <div class="total-cost">
+            <p>Total: <span>$</span> <span>NZD</span></p>
+          </div>
+          <div class="terms">
+            <p>15% GST is included in the total of all rates.</p>
+            <p>Full payment will be taken at vehicle collection.</p>
+            <p>
+              A 2%+GST surcharge will apply should a credit card be used as
+              payment.
+            </p>
+          </div>
+        </div>
+        <div class="confirm-btn make-booking-view-btn">
+          <p>Confirm and Countinue</p>
+        </div>
+      </section>
+      <!-- last view: confirm booking -->
+      <section class="views confirm-booking-view" id="anchor4">
+        <header>
+          <img class="logo" src="../SVG/bluekey-logo.svg" alt="logo" />
+          <img src="../SVG/phone-number.svg" alt="hotline" />
+          <img src="../SVG/TNZ-logo.svg" alt="tnzlogo" />
+        </header>
+        <nav>
+          <ul>
+            <li><a href="#anchor1">1.Edit Itinerary</a></li>
+            <li><a href="#anchor2">2. Select Vehicle</a></li>
+            <li><a href="#anchor3">3. Make Booking</a></li>
+            <li><a href="#anchor4">4. Confirm Booking</a></li>
+          </ul>
+        </nav>
+        <h2 id="confirm-title">Here is the summary of your booking:</h2>
+        <div class="map-container">
+          <div id="map2"></div>
+        </div>
+        <div class="confirm-middle-part">
+          <div class="contact-detail-thumbnail-container">
+            <div class="thumbnail-title">
+              <h5>Contact Details</h5>
+              <div class="edit-btn">
+                <i class="fas fa-user-edit"></i>
+                <h5>Edit</h5>
+              </div>
+            </div>
+            <div class="contact-detail-content-container">
+              <div class="contact-detail-line name">
+                <h6>First Name:</h6>
+                <p></p>
+              </div>
+              <div class="contact-detail-line last-name">
+                <h6>Last Name:</h6>
+                <p></p>
+              </div>
+              <div class="contact-detail-line e-mail">
+                <h6>E-mail:</h6>
+                <p></p>
+              </div>
+              <div class="contact-detail-line phone">
+                <h6>Phone:</h6>
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="itinerary-thumbnail-container">
+            <div class="thumbnail-title">
+              <h5>Your Itinerary</h5>
+              <div class="edit-btn">
+                <i class="fas fa-user-edit"></i>
+                <h5>Edit</h5>
+              </div>
+            </div>
+            <div class="itinerary-thumbnail final-view-itinerary"></div>
+          </div>
+        </div>
+        <div class="confirm-right-part">
+          <div class="vehicle-thumbnail-container final-view-vehicle">
+            <div class="thumbnail-title">
+              <h5>Vehicle Details</h5>
+              <div class="edit-btn">
+                <i class="fas fa-user-edit"></i>
+                <h5>Edit</h5>
+              </div>
+            </div>
+          </div>
+          <div class="quote-container final-view-quote">
+            <h5 class="thumbnail-title">Quote Details</h5>
+          </div>
+        </div>
+        <div class="confirm-btn final">
+          <p>Confirm My Booking</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
