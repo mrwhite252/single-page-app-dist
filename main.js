@@ -5,7 +5,7 @@ const vehicleInfo = [
     categoryId: 1,
     id: 1,
     name: "Motorbike",
-    img: "../images/motorbike.png",
+    img: "./images/motorbike.png",
     discription: "Suzuki V-Strom or similar",
     gear: "6-speed manual",
     fuel: "Petrol",
@@ -34,7 +34,7 @@ const vehicleInfo = [
     categoryId: 2,
     id: 2,
     name: "Small Car",
-    img: "../images/small-car.png",
+    img: "./images/small-car.png",
     discription: "Toyota Corolla or similar",
     gear: "5-speed automatic",
     fuel: "Petrol",
@@ -61,7 +61,7 @@ const vehicleInfo = [
     categoryId: 3,
     id: 3,
     name: "Large Car",
-    img: "../images/large-car.png",
+    img: "./images/large-car.png",
     discription: "Toyota Rav4 or similar",
     gear: "6-speed automatic",
     fuel: "Petrol",
@@ -88,7 +88,7 @@ const vehicleInfo = [
     categoryId: 4,
     id: 4,
     name: "Motor Home",
-    img: "../images/motorhome.png",
+    img: "./images/motorhome.png",
     discription: "Discovery - 4 Berth",
     gear: "6-speed automatic",
     fuel: "Diesel",
@@ -318,30 +318,30 @@ function displayVehicle(vehicleArray) {
         </div>
         <div class="car-basic-info">
           <div class="car-basic-info-content gear">
-            <img class="icon-img" src="../SVG/gear.svg" />
+            <img class="icon-img" src="./SVG/gear.svg" />
             <p>${vehicle.gear}</p>
           </div>
           <div class="car-basic-info-content fuel">
-            <img class="icon-img" src="../SVG/fuel.svg" />
+            <img class="icon-img" src="./SVG/fuel.svg" />
             <p>${vehicle.fuel}</p>
           </div>
           <div class="car-basic-info-content passenger">
-            <img class="icon-img" src="../SVG/passenger.svg" />
+            <img class="icon-img" src="./SVG/passenger.svg" />
             <p>${vehicle.passenger}</p>
           </div>
           <div class="car-basic-info-content doors">
-            <img class="icon-img" src="../SVG/doors.svg" />
+            <img class="icon-img" src="./SVG/doors.svg" />
             <p>${vehicle.doors}</p>
           </div>
           <div class="car-basic-info-content bags">
-            <img class="icon-img" src="../SVG/bag.svg" />
+            <img class="icon-img" src="./SVG/bag.svg" />
             <p>
               <span>${vehicle.bags1}</span> big bag <br />
               <span>${vehicle.bags2}</span> small bag
             </p>
           </div>
           <div class="car-basic-info-content fuel-consumption">
-            <img class="icon-img" src="../SVG/milsage.svg" />
+            <img class="icon-img" src="./SVG/milsage.svg" />
             <p><span>${vehicle.fuelConsumption}</span>L/100KM</p>
           </div>
           <div class="price-container">
@@ -590,22 +590,22 @@ function selectVehicle() {
     </div>
     <div class="car-basic-info">
       <div class="car-basic-info-content fuel">
-        <img class="icon-img" src="../SVG/fuel.svg" />
+        <img class="icon-img" src="./SVG/fuel.svg" />
         <p>${selectedVehicle.fuel}</p>
       </div>
       <div class="car-basic-info-content passenger">
-        <img class="icon-img" src="../SVG/passenger.svg" />
+        <img class="icon-img" src="./SVG/passenger.svg" />
         <p>${selectedVehicle.passenger}</p>
       </div>
       <div class="car-basic-info-content bags">
-        <img class="icon-img" src="../SVG/bag.svg" />
+        <img class="icon-img" src="./SVG/bag.svg" />
         <p>
           <span>${selectedVehicle.bags1}</span> big bag <br />
           <span>${selectedVehicle.bags2}</span> small bag
         </p>
       </div>
       <div class="car-basic-info-content fuel-consumption">
-        <img class="icon-img" src="../SVG/milsage.svg" />
+        <img class="icon-img" src="./SVG/milsage.svg" />
         <p><span>${selectedVehicle.fuelConsumption}</span>L/100KM</p>
       </div>
       <div class="price-container">
@@ -635,22 +635,22 @@ function selectVehicle() {
             <div class="car-detail">
               <div class="car-basic-info">
                 <div class="car-basic-info-content fuel">
-                  <img class="icon-img" src="../SVG/fuel.svg" />
+                  <img class="icon-img" src="./SVG/fuel.svg" />
                   <p>${selectedVehicle.fuel}</p>
                 </div>
                 <div class="car-basic-info-content passenger">
-                  <img class="icon-img" src="../SVG/passenger.svg" />
+                  <img class="icon-img" src="./SVG/passenger.svg" />
                   <p>${selectedVehicle.passenger}</p>
                 </div>
                 <div class="car-basic-info-content bags">
-                  <img class="icon-img" src="../SVG/bag.svg" />
+                  <img class="icon-img" src="./SVG/bag.svg" />
                   <p>
                     <span>${selectedVehicle.bags1}</span> big bag <br />
                     <span>${selectedVehicle.bags2}</span> small bag
                   </p>
                 </div>
                 <div class="car-basic-info-content gear">
-                  <img class="icon-img" src="../SVG/milsage.svg" />
+                  <img class="icon-img" src="./SVG/milsage.svg" />
                   <p><span>${selectedVehicle.fuelConsumption}</span>L/100KM</p>
                 </div>
               </div>
