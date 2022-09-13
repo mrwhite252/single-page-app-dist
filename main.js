@@ -177,7 +177,7 @@ function interactiveMap() {
   const chcDepot = [-43.477002, 172.55427],
     zqnDepot = [-45.024246, 168.736876],
     vehicleIcon = L.icon({
-      iconUrl: "./svg/marker.svg",
+      iconUrl: "./SVG/marker.svg",
 
       iconSize: [30, 30],
     }),
